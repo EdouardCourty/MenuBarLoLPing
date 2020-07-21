@@ -20,10 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the popover
-        let popover = NSPopover()
-        popover.contentSize = NSSize(width: 600, height: 500)
-        popover.behavior = .transient
-        self.popover = popover
+        self.popover = NSPopover()
         
         // Create the status item
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
@@ -54,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-        
+
     func buildMenu() -> Void {
         let menu = NSMenu()
 

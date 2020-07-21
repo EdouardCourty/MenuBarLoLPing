@@ -1,7 +1,7 @@
 # MenuBarLoLPing
 
-This app will show your machine's ping with Riot's server in EUW region.
+This app will show your machine's ping with the host you configured.
 
-<img src="MenuBarLoLPing.png" alt="MenuBarLoLPing" />
+<img src="MenuBarPing.png" alt="MenuBarPing" />
 
 © Edouard Courty - 2020

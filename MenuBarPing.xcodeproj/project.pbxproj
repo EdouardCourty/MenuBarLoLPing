@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6488776124C75106002BB84F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488776024C75106002BB84F /* AppDelegate.swift */; };
-		6488776324C75106002BB84F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488776224C75106002BB84F /* ContentView.swift */; };
 		6488776524C75108002BB84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6488776424C75108002BB84F /* Assets.xcassets */; };
 		6488776824C75108002BB84F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6488776724C75108002BB84F /* Preview Assets.xcassets */; };
 		6488776B24C75108002BB84F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6488776924C75108002BB84F /* Main.storyboard */; };
 		6488777724C75108002BB84F /* MenuBarPingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488777624C75108002BB84F /* MenuBarPingTests.swift */; };
 		6488778224C75108002BB84F /* MenuBarPingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488778124C75108002BB84F /* MenuBarPingUITests.swift */; };
+		6488779024C769C4002BB84F /* SwiftyPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488778F24C769C4002BB84F /* SwiftyPing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		6488775D24C75106002BB84F /* MenuBarPing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuBarPing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6488776024C75106002BB84F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6488776224C75106002BB84F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6488776424C75108002BB84F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6488776724C75108002BB84F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6488776A24C75108002BB84F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		6488777D24C75108002BB84F /* MenuBarPingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuBarPingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6488778124C75108002BB84F /* MenuBarPingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarPingUITests.swift; sourceTree = "<group>"; };
 		6488778324C75108002BB84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6488778F24C769C4002BB84F /* SwiftyPing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +99,12 @@
 			isa = PBXGroup;
 			children = (
 				6488776024C75106002BB84F /* AppDelegate.swift */,
-				6488776224C75106002BB84F /* ContentView.swift */,
 				6488776424C75108002BB84F /* Assets.xcassets */,
 				6488776924C75108002BB84F /* Main.storyboard */,
 				6488776C24C75108002BB84F /* Info.plist */,
 				6488776D24C75108002BB84F /* MenuBarPing.entitlements */,
 				6488776624C75108002BB84F /* Preview Content */,
+				6488778F24C769C4002BB84F /* SwiftyPing.swift */,
 			);
 			path = MenuBarPing;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6488776324C75106002BB84F /* ContentView.swift in Sources */,
+				6488779024C769C4002BB84F /* SwiftyPing.swift in Sources */,
 				6488776124C75106002BB84F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

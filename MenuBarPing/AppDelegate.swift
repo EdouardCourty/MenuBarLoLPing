@@ -12,28 +12,57 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var window: NSWindow!
-
-
+    var popover: NSPopover!
+    var statusBarItem: NSStatusItem!
+    var ping: Float!
+    static var HOST: String = "riot.de"
+    var PING_DELAY: Double = 1.2
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
-
-        // Create the window and set the content view. 
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: contentView)
-        window.makeKeyAndOrderFront(nil)
+        // Create the popover
+        let popover = NSPopover()
+        popover.contentSize = NSSize(width: 600, height: 500)
+        popover.behavior = .transient
+        self.popover = popover
+        
+        // Create the status item
+        self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+        
+        if let button = self.statusBarItem.button {
+            button.title = "-"
+            button.action = #selector(togglePopover(_:))
+        }
+        
+        // Ping indefinitely
+        let pinger = try? SwiftyPing(host: AppDelegate.HOST, configuration: PingConfiguration(interval: self.PING_DELAY, with: 5), queue: DispatchQueue.global())
+        pinger?.observer = { (response) in
+            let duration = response.duration * 1000
+            let durationString: String = String(format: "%.0f ms", round(duration))
+            self.statusBarItem.button?.title = durationString
+        }
+        pinger?.startPinging()
+        
+        buildMenu()
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    
+    @objc func togglePopover(_ sender: AnyObject?) -> Void {
+        if let button = self.statusBarItem.button {
+            if self.popover.isShown {
+                self.popover.performClose(sender)
+            } else {
+                self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            }
+        }
     }
+        
+    func buildMenu() -> Void {
+        let menu = NSMenu()
 
+        menu.addItem(NSMenuItem(title: "Host: " + AppDelegate.HOST, action: nil, keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Quit LoLPing", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+
+        self.statusBarItem.menu = menu
+    }
 
 }
-

@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         
         if let button = self.statusBarItem.button {
-            button.title = "-"
+            button.title = "- ms"
             button.action = #selector(togglePopover(_:))
         }
         
